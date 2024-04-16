@@ -4,7 +4,6 @@ const cors = require("cors");
 const helmet = require("helmet");
 const userRoutes = require("./routes/users");
 
-
 const app = express();
 app.use(helmet());
 app.use(cors());

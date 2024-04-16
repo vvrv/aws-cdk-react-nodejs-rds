@@ -3,12 +3,14 @@ import { useEffect, useState } from "react";
 function App() {
   const [users, setUsers] = useState([]);
 
+  const API_HOST = import.meta.env.VITE_API_URL;
+
   // fetch users on mount
   useEffect(() => {
-    fetch("http://localhost:3000/api/users")
+    fetch(`${API_HOST}/api/users`)
       .then((res) => res.json())
       .then((users) => setUsers(users));
-  }, []);
+  }, [API_HOST]);
 
   return (
     <>
