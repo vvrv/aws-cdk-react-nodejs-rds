@@ -18,7 +18,7 @@ router.get("/", async (req, res) => {
     const users = await User.findAll();
     res.json(users);
   } catch (error) {
-    res.status(500).json({ message: "Failed to fetch users." });
+    res.status(500).json({ message: "Failed to fetch users.", error });
   }
 });
 
